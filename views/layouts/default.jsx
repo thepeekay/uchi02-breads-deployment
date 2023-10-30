@@ -15,7 +15,7 @@ function Default(html) {
                         <h1><a href="/breads">BreadCRUD</a></h1>
                     </header>
                 </div>
-                <h1>HTML Rendered!</h1>
+                {/* <h1>HTML Rendered!</h1> */}
                 <div className="container">
                     {html.children}
                 </div>
