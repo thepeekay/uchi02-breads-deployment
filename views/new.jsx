@@ -15,9 +15,10 @@ function New() {
                 </input>
                 <label htmlFor="image">Image</label>
                 <input
-                    type="text"
+                    type="url"
                     name="image"
-                    id="image">
+                    id="image"
+                    pattern="https?://.+" title="Include http://">
                 </input>
                 <label htmlFor="hasGluten">Has Gluten?</label>
                 <input
