@@ -1,11 +1,11 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Edit({bread, index}) {
+function Edit({bread, bakers}) {
     return (
         <Default>
             <h2>Edit a bread</h2>
-            <form action={`/breads/${index}?_method=PUT`} method="POST">
+            <form action={`/breads/${bread.id}?_method=PUT`} method="POST">
                 <label htmlFor="name">Name</label>
                 <input
                     type="text"
@@ -22,6 +22,22 @@ function Edit({bread, index}) {
                     pattern="https?://.+" title="Include http://"
                     defaultValue={bread.image}>
                 </input>
+                <label htmlFor="baker">Baker</label>
+                <select name="baker" id="baker" defaultValue={bread.baker}>
+                    {bakers.map((baker) => {
+                        return (
+                            <option value={baker.id} key={baker.id}>{baker.name}</option>
+                        )
+                    })
+                    }
+                {/*    <option value="Rachel">Rachel</option>*/}
+                {/*    <option value="Monica">Monica</option>*/}
+                {/*    <option value="Joey">Joey</option>*/}
+                {/*    <option value="Chandler">Chandler</option>*/}
+                {/*    <option value="Ross">Ross</option>*/}
+                {/*    <option value="Phoebe">Phoebe</option>*/}
+                {/*    <option value="Aldo">Aldo</option>*/}
+                </select>
                 <label htmlFor="hasGluten">Has Gluten?</label>
                 <input
                     type="checkbox"
